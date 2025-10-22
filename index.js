@@ -1,9 +1,10 @@
 import express from "express";
+import "dotenv/config";
 import axios from "axios";
 import cron from "node-cron";
 
 const app = express();
-const { WEBHOOK_URL, PORT = 3000 } = process.env;
+const { WEBHOOK_URL = "", PORT = 3000 } = process.env;
 
 const post = async (content) => {
   try {
