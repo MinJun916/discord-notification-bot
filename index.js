@@ -1,7 +1,9 @@
+import express from "express";
 import axios from "axios";
 import cron from "node-cron";
 
-const { WEBHOOK_URL } = process.env;
+const app = express();
+const { WEBHOOK_URL, PORT = 3000 } = process.env;
 
 const post = async (content) => {
   try {
@@ -23,7 +25,7 @@ const post = async (content) => {
 
 const runJob = () => {
   cron.schedule(
-    "0 10, 13, 16, 19 * * 1-5",
+    "0 10,13,16,19 * * 1-5",
     async () => {
       const nowHour = new Date().toLocaleString("ko-KR", {
         timeZone: "Asia/Seoul",
@@ -53,5 +55,11 @@ const runJob = () => {
   );
 };
 
+app.get("/health", (_, res) => res.status(200).send("OK"));
+app.get("/", (_, res) => res.status(200).send("bot is running"));
+
 console.log(`🚀 starting...`);
 runJob();
+app.listen(PORT, () => {
+  console.log(`🚀 server is running on port ${PORT}`);
+});
