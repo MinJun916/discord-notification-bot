@@ -32,7 +32,7 @@ const post = async (content) => {
 
 const runJob = () => {
   cron.schedule(
-    "0 9,10,13,16,19 * * 1-5",
+    "0 9,10,14,17,19 * * 1-5",
     async () => {
       const now = new Date();
       const koreaTime = new Date(
@@ -47,7 +47,7 @@ const runJob = () => {
         message =
           "## 🌞 데일리 알림\n<@&1427591650166702161>\n\n질문이나 궁금한 부분, 이야기 나누고 싶은 주제가 있으시면 언제든 **디스코드 음성채널**로 와주세요! 🎧\n\n오늘도 화이팅🍀";
       }
-      if (nowHour === "10" || nowHour === "13" || nowHour === "16") {
+      if (nowHour === "10" || nowHour === "14" || nowHour === "17") {
         message =
           "## ❗️ 진행 상황 공유 알림봇\n<@&1427591650166702161>\n\n현재 진행중인 내용을 스레드로 공유해주세요!";
       }
