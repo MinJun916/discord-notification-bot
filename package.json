@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
+    "build": "echo 'No build step needed'",
     "start": "node src/app.js",
     "dev": "node src/app.js"
   },
