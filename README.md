@@ -13,8 +13,6 @@ Discord 웹훅을 사용하여 정기적으로 알림을 보내는 봇입니다.
 
 ## 설치 및 실행
 
-### 로컬 개발
-
 1. 의존성 설치
 
 ```bash
@@ -33,24 +31,6 @@ cp .env.example .env
 ```bash
 npm start
 ```
-
-### Vercel 배포
-
-1. Vercel CLI 설치 (선택사항)
-
-```bash
-npm i -g vercel
-```
-
-2. Vercel에 배포
-
-```bash
-vercel
-```
-
-3. 환경변수 설정 (Vercel 대시보드에서)
-   - `WEBHOOK_URL`: Discord 웹훅 URL
-   - `PORT`: 3000 (기본값)
 
 ## 환경변수
 
